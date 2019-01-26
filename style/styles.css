@@ -41,16 +41,18 @@
   color: #1c1c1c;
   display: none;
 }
-.result-card h1 {
+.result-card a {
+  margin-bottom: 0%;
+  font-size: 1.1em;
   font-weight: 600;
-  font-size: 150%;
-  line-height: 80%;
+}
+.result-card h2 {
+  font-weight: 400;
+  font-size: 1em;
+  margin-top: 0px;
 }
 .result-card p {
-  margin-top: 0%;
-  line-height: 95%;
-  margin-bottom: 0px;
-  font-size: 120%;
+  font-size: 1em;
   word-wrap: break-word;
 }
 

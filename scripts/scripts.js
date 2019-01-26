@@ -47,10 +47,12 @@ const updateSearch = (data) => {
       var card = document.getElementById("resultCard").cloneNode(true);
       document.getElementById("resultsDiv").appendChild(card);
       var cardAtr = card.childNodes;
-      //console.log(cardAtr);
+      console.log(cardAtr);
+      //console.log(data.query.search[i]);
       cardAtr[1].innerHTML = data.query.search[i].title;
-      cardAtr[3].innerHTML = '"...' + data.query.search[i].snippet + '..."';
-      card.setAttribute("onclick", "window.open('https://en.wikipedia.org/?curid=" + data.query.search[i].pageid + "'); return false;")
+      cardAtr[1].href = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
+      cardAtr[3].innerHTML = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
+      cardAtr[5].innerHTML = '"...' + data.query.search[i].snippet + '..."';
       card.style.display = "block";
     }
   }
