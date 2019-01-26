@@ -1,0 +1,22 @@
+.result-card {
+    color: #1c1c1c;
+    display: none;
+
+    h1 {
+        font-weight: 600;
+        font-size: 150%;
+        line-height: 80%;
+    }
+
+    p {
+        margin-top: 0%;
+        line-height: 95%;
+        margin-bottom: 0px;
+        font-size: 120%;
+        word-wrap: break-word;
+    }
+}
+
+.searchmatch {
+    font-weight: 600;
+}

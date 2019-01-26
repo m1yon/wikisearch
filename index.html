@@ -7,54 +7,38 @@
 
      <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-     <!-- Bootstrap 4 -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <!-- Link to an external CSS files -->
      <link rel="stylesheet" type="text/css" href="style\styles.css">
      <!-- Font Awesome -->
      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-     <!-- Fonts -->
-     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600" rel="stylesheet">
-     
+    
      <title>WikiSearch</title>
   </head>
 
   <body>
-    <!-- Noise to help gradient banding -->
-    <div id="grad">
-        <div id="noise"></div>
-    </div>
-
-    <div id="particles-js"></div>
     
-    <div class="flex-container" id="searchDiv">
-      <a href=""><h1 id="mainTitle">Wiki<span style="font-weight: 200;">Search</span></h1></a>
-      <div id="searchBox">
-        <input type="text" onchange="search()" placeholder="Search..." autocomplete="off" id="search">
+    <div class="title-container" id="searchDiv">
+      <a href="" class="title" id="mainTitle">Wiki<span style="font-weight: 200;">Search</span></a>
+      <div class="searchbox" id="searchBox">
+        <input class="search-input" type="text" onchange="search()" placeholder="Search..." autocomplete="off" id="search">
       </div>
     </div>
 
-    <div class="flex-container" id="resultsDiv">
+    <div class="grid" id="resultsDiv">
       <!-- Search results will be cloned here -->
     </div>
 
     <!-- Search result card template -->
-    <div class="searchResult" onmouseover="cardHoverIn(this)" onmouseout="cardHoverOut(this)" id="resultCard">
-        <p id="title">Title</p>
+    <div class="result-card" id="resultCard">
+        <h1 id="title">Title</h1>
         <p id="desc">description</p>
     </div>
 
     <div class="footer" id="footer">
-      <p>Copyright © 2018. Made by <a href="https://sevonefive.github.io/">sevonefive</a></p>
+      <p>Copyright © 2019. Made by <a href="https://sevonefive.github.io/">Michael Lyon</a></p>
     </div>
   </body>
 
-  <!-- Particles JS -->
-  <script src="scripts/particles.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/lib/stats.js"></script>
-  <!-- Anime JS -->
-  <script src="scripts/anime.js"></script>
   <!-- Link to an external JS file -->
-  <script type="text/javascript" src="scripts\scripts.js" async></script>
+  <script type="text/javascript" src="scripts\scripts.js"></script>
 </html>

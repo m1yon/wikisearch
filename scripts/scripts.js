@@ -6,13 +6,7 @@ const search = () => {
   if(!searching && document.getElementById("search").value.length > 0) {
     var cards = document.getElementById("resultsDiv").childNodes;
     if(cards.length > 3) {
-      anime({
-        targets: cards,
-        opacity: 0,
-        easing: "easeOutCubic",
-        translateY: 100,
-        duration: 300
-      });
+      // Animate cards here
       searching = true;
       window.setTimeout(getSearch, 300);
     } else {
@@ -60,32 +54,11 @@ const updateSearch = (data) => {
       card.style.display = "block";
     }
   }
-    
-  // Adjust footer after search
-  document.getElementById("footer").style.marginTop = "-15%";
-
-  // Animate cards
-  var cards = document.getElementById("resultsDiv").childNodes;
-  var cardsAnimate = anime({
-    targets: cards,
-    opacity: 0.85,
-    easing: "easeOutCubic",
-    translateY: 50
-  });
 
   // Move mainTitle and search up
-  var mainTitleAnimate = anime({
-    targets: "#searchDiv",
-    easing: "easeOutCubic",
-    translateY: -300
-  });
+  
+  // Animate post-search title here 
 
-  // Move searchDiv up also
-  var resultsAnimate = anime({
-    targets: "#resultsDiv",
-    easing: "easeOutCubic",
-    translateY: -350
-  });
   searching = false;
 }
 
@@ -110,38 +83,10 @@ const noResults = () => {
   document.getElementById("resultsDiv").innerHTML = "<h2 style='color: #f4f4f4;'>No results found :(</h2>";
 }
 
-// Cool Anime JS stuff
-const mainTitleAnimate = anime({
-  targets: "#mainTitle",
-  opacity: 1,
-  easing: "easeOutCubic",
-  translateY: 50,
-  delay: 500
-});
+// Startup Main title animation
 
-const searchBoxAnimate = anime({
-  targets: "#searchBox",
-  opacity: 1,
-  easing: "easeOutCubic",
-  translateY: -50,
-  delay: 750
-});
+// Startup Search box animation
 
-const footernimate = anime({
-  targets: "#footer",
-  opacity: 0.75,
-  easing: "easeOutCubic",
-  translateY: 50,
-  delay: 1000
-});
-
-// Card:hover event handlers
-const cardHoverIn = (x) => {
-  x.style.opacity = 1;
-}
-
-const cardHoverOut = (x) => {
-  x.style.opacity = 0.85;
-}
+// Startup footer animation
 
 

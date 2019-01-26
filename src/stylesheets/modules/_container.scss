@@ -1,0 +1,7 @@
+@mixin container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row;
+    justify-content: center;
+}

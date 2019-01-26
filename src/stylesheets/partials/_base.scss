@@ -1,0 +1,22 @@
+@import "containers";
+@import "footer";
+@import "grid";
+@import "result-card";
+@import "searchbox";
+@import "title";
+
+body {
+    background: $off-white;
+    color: $off-black;
+    font-family: $source-sans-pro;
+
+    p {
+        color: $off-black;
+    }
+
+    a, a:hover, a:visited, a:link, a:active { 
+        color: $off-black;
+        font-weight: 400;
+        text-decoration: none; 
+    }
+}
