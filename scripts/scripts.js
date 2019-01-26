@@ -2,11 +2,11 @@ var xhr;
 var searching = false;
 
 // Initial search call, acts as debouncer
-function search() {
+const search = () => {
   if(!searching && document.getElementById("search").value.length > 0) {
     var cards = document.getElementById("resultsDiv").childNodes;
     if(cards.length > 3) {
-      var cardsAnimate = anime({
+      anime({
         targets: cards,
         opacity: 0,
         easing: "easeOutCubic",
@@ -23,7 +23,7 @@ function search() {
 }
 
 // Fetches the JSON file using the given keyword
-function getSearch() {
+const getSearch = () => {
   var keyword = document.getElementById("search").value;
   xhr = createCORSRequest("GET", "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&prop=info&srlimit=100&origin=*&inprop=url&utf8=&format=json");
   xhr.send();
@@ -41,7 +41,7 @@ function getSearch() {
 }
 
 // Updates the CSS with the new JSON file
-function updateSearch(data) {
+const updateSearch = (data) => {
   // Clear old search results
   document.getElementById("resultsDiv").innerHTML = "";
 
@@ -90,7 +90,7 @@ function updateSearch(data) {
 }
 
 // Allows Cross-Origin requests
-function createCORSRequest(method, url) {
+const createCORSRequest = (method, url) => {
   var xhr = new XMLHttpRequest();
   if("withCredentials" in xhr) {
     xhr.open(method, url, true);
@@ -106,12 +106,12 @@ function createCORSRequest(method, url) {
 }
 
 // Event handler for results = 0
-function noResults() {
+const noResults = () => {
   document.getElementById("resultsDiv").innerHTML = "<h2 style='color: #f4f4f4;'>No results found :(</h2>";
 }
 
 // Cool Anime JS stuff
-var mainTitleAnimate = anime({
+const mainTitleAnimate = anime({
   targets: "#mainTitle",
   opacity: 1,
   easing: "easeOutCubic",
@@ -119,7 +119,7 @@ var mainTitleAnimate = anime({
   delay: 500
 });
 
-var searchBoxAnimate = anime({
+const searchBoxAnimate = anime({
   targets: "#searchBox",
   opacity: 1,
   easing: "easeOutCubic",
@@ -127,7 +127,7 @@ var searchBoxAnimate = anime({
   delay: 750
 });
 
-var footernimate = anime({
+const footernimate = anime({
   targets: "#footer",
   opacity: 0.75,
   easing: "easeOutCubic",
@@ -136,11 +136,11 @@ var footernimate = anime({
 });
 
 // Card:hover event handlers
-function cardHoverIn(x) {
+const cardHoverIn = (x) => {
   x.style.opacity = 1;
 }
 
-function cardHoverOut(x) {
+const cardHoverOut = (x) => {
   x.style.opacity = 0.85;
 }
 
