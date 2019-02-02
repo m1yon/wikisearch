@@ -6,8 +6,6 @@
     margin-top: 15%;
 }
 
-.search-container {
-    @include container;
-    flex-direction: column;
-    margin-top: -47%;
+.title-container-alt {
+    display: none;
 }

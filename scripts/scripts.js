@@ -3,6 +3,11 @@ var searching = false;
 
 // Initial search call, acts as debouncer
 const search = () => {
+  // Move mainTitle and search up
+  document.getElementById("mainTitle").style.display = "none";
+  document.getElementById("mainTitleAlt").style.display = "flex";
+
+
   if(!searching && document.getElementById("search").value.length > 0) {
     var cards = document.getElementById("resultsDiv").childNodes;
     if(cards.length > 3) {
@@ -23,7 +28,6 @@ const getSearch = () => {
   xhr.send();
 
   xhr.onload = function() {
-    console.log("Responded");
     var data = JSON.parse(xhr.responseText);
     //console.log(data);
     updateSearch(data);
@@ -57,8 +61,6 @@ const updateSearch = (data) => {
     }
   }
 
-  // Move mainTitle and search up
-  
   // Animate post-search title here 
 
   searching = false;

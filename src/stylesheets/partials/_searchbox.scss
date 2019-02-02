@@ -1,16 +1,30 @@
 .searchbox {
-    //filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
 }
 
 .search-input {
     width: 35rem;
-    border-radius: 25px;
-    border: 2px, black;
+    border-color: lighten($off-black, 70%);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
     font-size: 16px;
-    opacity: 0.85;
     padding-left: 5%;
     height: 40px;
     background-color: $off-white;
-    color: #0e1420;
+    outline: none;
+}
+
+.search-input-alt {
+    width: 35rem;
+    background-color: $off-white;
+    border-color: lighten($off-black, 70%);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+    padding-left: 5%;
+    height: 40px;
+    margin: 1.5rem 0;
     outline: none;
 }

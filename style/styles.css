@@ -11,14 +11,8 @@
   margin-top: 15%;
 }
 
-.search-container {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: row;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: -47%;
+.title-container-alt {
+  display: none;
 }
 
 .footer {
@@ -35,8 +29,7 @@
   grid-template-columns: 100%;
   grid-gap: 0.5rem;
   justify-content: center;
-  margin-top: 7%;
-  padding: 0 5%;
+  padding: 0% 50% 0% 13%;
 }
 
 .result-card {
@@ -48,12 +41,21 @@
   font-size: 1.1em;
   font-weight: 600;
 }
+.result-card a:link {
+  text-decoration: none;
+}
+.result-card a:hover {
+  text-decoration: underline;
+}
 .result-card h2 {
   font-weight: 400;
   font-size: 1em;
   margin-top: 0px;
+  margin-bottom: 0px;
+  color: green;
 }
 .result-card p {
+  margin-top: 0px;
   font-size: 1em;
   word-wrap: break-word;
 }
@@ -62,23 +64,54 @@
   font-weight: 600;
 }
 
+.searchbox {
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+}
+
 .search-input {
   width: 35rem;
-  border-radius: 25px;
-  border: 2px, black;
+  border-color: #bfbfbf;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
   font-size: 16px;
-  opacity: 0.85;
   padding-left: 5%;
   height: 40px;
   background-color: #ffffff;
-  color: #0e1420;
+  outline: none;
+}
+
+.search-input-alt {
+  width: 35rem;
+  background-color: #ffffff;
+  border-color: #bfbfbf;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 16px;
+  padding-left: 5%;
+  height: 40px;
+  margin: 1.5rem 0;
   outline: none;
 }
 
 .title {
-  font-weight: 600;
+  color: #0c0c0c;
+  font-weight: 400;
   font-size: 300%;
   margin-bottom: 1%;
+  text-decoration: none;
+}
+
+.title-alt {
+  align-items: center;
+  display: flex;
+  color: #0c0c0c;
+  font-weight: 400;
+  font-size: 2rem;
+  justify-content: center;
+  text-decoration: none;
+  width: 12%;
 }
 
 body {
@@ -89,11 +122,6 @@ body {
 }
 body p {
   color: #0c0c0c;
-}
-body a, body a:hover, body a:visited, body a:link, body a:active {
-  color: #0c0c0c;
-  font-weight: 400;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

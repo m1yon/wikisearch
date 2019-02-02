@@ -1,5 +1,20 @@
 .title {
-    font-weight: 600;
+    color: $off-black;
+    font-weight: 400;
     font-size: 300%;
     margin-bottom: 1%;
+    text-decoration: none; 
+}
+
+.title-alt {
+    align-items: center;
+    display: flex;
+    
+    
+    color: $off-black;
+    font-weight: 400;
+    font-size: 2rem;
+    justify-content: center;
+    text-decoration: none; 
+    width: 12%;
 }

@@ -2,19 +2,33 @@
     color: #1c1c1c;
     display: none;
 
+    // Title Link
     a {
         margin-bottom: 0%;
         font-size: 1.1em;
         font-weight: 600;
     }
 
+    a:link {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    // URL
     h2 {
         font-weight: 400;
         font-size: 1em;
         margin-top: 0px;
+        margin-bottom : 0px;
+        color: green;
     }
 
+    // Description
     p {
+        margin-top: 0px;
         font-size: 1em;
         word-wrap: break-word;
     }
