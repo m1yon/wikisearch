@@ -22,6 +22,11 @@
   opacity: 0.75;
   text-align: center;
 }
+.footer a {
+  color: #0c0c0c;
+  font-weight: 400;
+  text-decoration: none;
+}
 
 .grid {
   display: grid;

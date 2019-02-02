@@ -2,13 +2,17 @@ var xhr;
 var searching = false;
 
 // Initial search call, acts as debouncer
-const search = () => {
+const search = (searchboxType) => {
+  // Clear search results
+  document.getElementById("resultsDiv").innerHTML = "";
+
   // Move mainTitle and search up
   document.getElementById("mainTitle").style.display = "none";
   document.getElementById("mainTitleAlt").style.display = "flex";
+  document.getElementById("footer").style.display = "none";
 
 
-  if(!searching && document.getElementById("search").value.length > 0) {
+  if(!searching && document.getElementById(searchboxType).value.length > 0) {
     var cards = document.getElementById("resultsDiv").childNodes;
     if(cards.length > 3) {
       // Animate cards here
@@ -16,20 +20,19 @@ const search = () => {
       window.setTimeout(getSearch, 300);
     } else {
       searching = true;
-      getSearch();
+      getSearch(searchboxType);
     }
   }
 }
 
 // Fetches the JSON file using the given keyword
-const getSearch = () => {
-  var keyword = document.getElementById("search").value;
+const getSearch = (searchboxType) => {
+  var keyword = document.getElementById(searchboxType).value;
   xhr = createCORSRequest("GET", "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&prop=info&srlimit=100&origin=*&inprop=url&utf8=&format=json");
   xhr.send();
 
   xhr.onload = function() {
     var data = JSON.parse(xhr.responseText);
-    //console.log(data);
     updateSearch(data);
   }
 
@@ -40,9 +43,6 @@ const getSearch = () => {
 
 // Updates the CSS with the new JSON file
 const updateSearch = (data) => {
-  // Clear old search results
-  document.getElementById("resultsDiv").innerHTML = "";
-
   // Add new search results
   if(data.query.search.length <= 0) {
     noResults();
@@ -51,8 +51,6 @@ const updateSearch = (data) => {
       var card = document.getElementById("resultCard").cloneNode(true);
       document.getElementById("resultsDiv").appendChild(card);
       var cardAtr = card.childNodes;
-      console.log(cardAtr);
-      //console.log(data.query.search[i]);
       cardAtr[1].innerHTML = data.query.search[i].title;
       cardAtr[1].href = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
       cardAtr[3].innerHTML = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
@@ -61,8 +59,7 @@ const updateSearch = (data) => {
     }
   }
 
-  // Animate post-search title here 
-
+  document.getElementById("footer").style.display = "block";
   searching = false;
 }
 
