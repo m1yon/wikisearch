@@ -11,6 +11,8 @@ const search = (searchboxType) => {
   document.getElementById("mainTitleAlt").style.display = "flex";
   document.getElementById("footer").style.display = "none";
 
+  if(searchboxType == "search")
+    document.getElementById("searchAlt").value = document.getElementById("search").value;
 
   if(!searching && document.getElementById(searchboxType).value.length > 0) {
     var cards = document.getElementById("resultsDiv").childNodes;
@@ -43,6 +45,7 @@ const getSearch = (searchboxType) => {
 
 // Updates the CSS with the new JSON file
 const updateSearch = (data) => {
+  console.log(data);
   // Add new search results
   if(data.query.search.length <= 0) {
     noResults();
@@ -51,6 +54,7 @@ const updateSearch = (data) => {
       var card = document.getElementById("resultCard").cloneNode(true);
       document.getElementById("resultsDiv").appendChild(card);
       var cardAtr = card.childNodes;
+      
       cardAtr[1].innerHTML = data.query.search[i].title;
       cardAtr[1].href = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
       cardAtr[3].innerHTML = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
