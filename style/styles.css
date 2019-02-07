@@ -55,7 +55,9 @@
 
 .result-card {
   color: #1c1c1c;
+  flex-direction: column;
   display: none;
+  justify-content: center;
 }
 .result-card a {
   margin-bottom: 0%;
@@ -71,13 +73,20 @@
 .result-card h2 {
   font-size: 1em;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 0.15rem;
   color: green;
 }
 .result-card p {
   margin-top: 0px;
   font-size: 1em;
   word-wrap: break-word;
+}
+@media only screen and (max-width: 768px) {
+  .result-card {
+    background-color: #fff;
+    padding: 4%;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.3));
+  }
 }
 
 .searchmatch {

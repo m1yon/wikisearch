@@ -59,7 +59,7 @@ const updateSearch = (data) => {
       cardAtr[1].href = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
       cardAtr[3].innerHTML = `https://en.wikipedia.org/?curid=${data.query.search[i].pageid}`;
       cardAtr[5].innerHTML = '"...' + data.query.search[i].snippet + '..."';
-      card.style.display = "block";
+      card.style.display = "flex";
     }
   }
 
