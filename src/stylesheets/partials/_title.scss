@@ -1,10 +1,17 @@
 .title {
+    position: relative;
     color: $off-black;
     font-family: $open-sans;
     font-size: 3rem;
     font-weight: 400;
     margin-bottom: 1%;
     text-decoration: none; 
+    opacity: 1;
+    
+    animation-fill-mode: forwards;
+    animation-name: fade-down-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
 }
 
 .title-alt {

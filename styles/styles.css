@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Source+Sans+Pro:300,400,600");
+@keyframes fade-down-in {
+  0% {
+    opacity: 0;
+    bottom: 100px;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+@keyframes fade-up-in {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
 .title-container {
   align-items: center;
   display: flex;
@@ -26,11 +52,17 @@
 .footer {
   width: 100%;
   font-weight: 200;
-  color: #0c0c0c;
-  opacity: 0.75;
+  color: #0d0d0d;
+  opacity: 0;
   text-align: center;
   margin-top: 5%;
   padding-bottom: 1%;
+  position: relative;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: fade-up-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 .footer a {
   color: #0c0c0c;
@@ -105,6 +137,11 @@
   height: 40px;
   background-color: #ffffff;
   outline: none;
+  position: relative;
+  animation-fill-mode: forwards;
+  animation-name: fade-up-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 @media only screen and (max-width: 1280px) {
   .search-input {
@@ -139,12 +176,18 @@
 }
 
 .title {
+  position: relative;
   color: #0c0c0c;
   font-family: "Open Sans", sans-serif;
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 1%;
   text-decoration: none;
+  opacity: 1;
+  animation-fill-mode: forwards;
+  animation-name: fade-down-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
 .title-alt {

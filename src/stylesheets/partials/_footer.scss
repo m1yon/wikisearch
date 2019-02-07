@@ -1,11 +1,19 @@
 .footer {
     width: 100%;
     font-weight: 200;
-    color: $off-black;
-    opacity: 0.75;
+    color: lighten($off-black, .25);
+    opacity: 0;
     text-align: center;
     margin-top: 5%;
     padding-bottom: 1%;
+    position: relative;
+
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    animation-name: fade-up-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+
     a {
         color: $off-black;
         font-weight: 400;

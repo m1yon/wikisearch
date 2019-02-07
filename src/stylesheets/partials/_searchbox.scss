@@ -10,6 +10,12 @@
     height: 40px;
     background-color: $white;
     outline: none;
+    position: relative;
+
+    animation-fill-mode: forwards;
+    animation-name: fade-up-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
 
     // adjust searchbox size on tablets
     @media only screen and (max-width: $tablet-width) {
