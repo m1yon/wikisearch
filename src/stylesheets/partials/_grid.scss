@@ -5,4 +5,9 @@
     grid-gap: .5rem;
     justify-content: center;
     padding: 0% 50% 0% 13%;
+
+    @media only screen and (max-width: $mobile-width) {
+        padding: 0% 10% 0% 10%;
+        grid-auto-rows: 12rem;
+    }
 }
